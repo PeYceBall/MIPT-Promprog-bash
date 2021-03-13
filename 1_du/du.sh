@@ -1,0 +1,1 @@
+ls -Rs "$@" | awk '$1 == "total" {print $2}' | awk '{s+=$1} END {print s}' | awk -f $(dirname "$0")/human_readable.awk
